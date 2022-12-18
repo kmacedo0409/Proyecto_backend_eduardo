@@ -10,8 +10,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model categoria {
+model categorias {
   categoria_id Int    @id @default(autoincrement())
   nombre       String @db.VarChar(50)
   descripcion  String
+}
+
+model tipoUsuario {
+  tipo_usuario_id Int    @id @default(autoincrement())
+  nombre          String @db.VarChar(50)
+  descripcion     String
+  //RELACIONANDO
+  usuario usuario[]
+
+  @@map("tipos_usuario")
+}
+
+model usuario {
+  usuari_id       Int    @id @default(autoincrement())
+  nombre          String @db.VarChar(50)
+  telefono        String @db.VarChar(50)
+  correo          String @db.VarChar(50)
+  constrasena     String @db.VarChar(50)
+  tipo_usuario_id Int
+  //RELACIONANDO
+  tipoUsuario tipoUsuario @relation(fields: [tipo_usuario_id], references: [tipo_usuario_id])
+  @@map("usuarios")
 }
