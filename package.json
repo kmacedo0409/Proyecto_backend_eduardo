@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "start:dev": "nodemon ./src/index.js"
   },
   "keywords": [
     "node",
@@ -21,5 +23,6 @@
     "prisma": "^4.7.1"
   },
   "author": "Jean, Peter, Karina, Jhoan",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }
