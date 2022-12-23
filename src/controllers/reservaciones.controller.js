@@ -5,29 +5,7 @@ export const crearReservacion = async (req, res) => {
     try{
         const nuevaReservacion = await Prisma.reservacion.create({
             data,
-            // data:{
-            //     clienteId: data.clienteId,
-            //     estadoId: data.estadoId,
-            //     categoriaId: data.categoriaId,
-            //     lugar: data.lugar,
-            //     fecha: data.fecha,
-            //     descripcion: data.descripcion,
-            //     estadoReservacion: {
-            //         create: data.estado,
-            //     },
-            // },
-            // select:{
-            //     clienteId: true,
-            //     lugar: true,
-            //     fecha: true,
-            //     descripcion: true,
-            //     estadoReservacion:{
-            //         select:{
-            //             id:true,
-            //             tipoEstado:true
-            //         }
-            //     }
-            // }
+    
         });
         
         res.status(201).json({
